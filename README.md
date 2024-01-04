@@ -4,7 +4,20 @@
 
 This project is built on Fastify and aims to streamline the testing process using `node:test` instead of external dependencies. Additionally, it leverages mocks to simulate external dependencies.
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/) (v21.5.x)
+- [pnpm](https://pnpm.io/) (v8.13.x)
+
 ## Usage
+
+### Installation
+
+Run the following command to install the dependencies:
+
+```bash
+pnpm install
+```
 
 ### Development
 
