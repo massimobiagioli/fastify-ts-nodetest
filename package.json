@@ -1,0 +1,27 @@
+{
+	"scripts": {
+		"dev": "nodemon --watch src src/index.ts",
+		"build": "tsc -p tsconfig.json",
+		"test": "node -r ts-node/register --test test/**/*.test.ts",
+		"test:watch": "node -r ts-node/register --test --watch test/**/*.test.ts",
+		"test:coverage": "nyc pnpm run test"
+	},
+	"dependencies": {
+		"@fastify/autoload": "^5.8.0",
+		"@fastify/type-provider-typebox": "^3.5.0",
+		"@sinclair/typebox": "^0.32.3",
+		"fastify": "^4.25.2",
+		"fastify-plugin": "^4.5.1"
+	},
+	"devDependencies": {
+		"@types/module-alias": "^2.0.4",
+		"@types/node": "^20.10.5",
+		"fastify-tsconfig": "^2.0.0",
+		"module-alias": "^2.2.3",
+		"nodemon": "^3.0.2",
+		"nyc": "^15.1.0",
+		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
+		"typescript": "^5.3.3"
+	}
+}
