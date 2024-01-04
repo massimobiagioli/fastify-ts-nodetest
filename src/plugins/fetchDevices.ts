@@ -1,19 +1,17 @@
 import ExternalDevice from '@src/external/device'
-import { DeviceCollectionType } from '@src/models/device'
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import fp from 'fastify-plugin'
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    fetchDevices: () => Promise<DeviceCollectionType>
-  }
-}
 
 async function fetchDevicesPlugin(
   fastify: FastifyInstance,
   _opts: FastifyPluginOptions,
 ): Promise<void> {
+  const zzz = await fastify.zFetch()
+  console.log('zzz', zzz)
   fastify.decorate('fetchDevices', ExternalDevice.fetchDevices)
 }
 
-export default fp(fetchDevicesPlugin)
+export default fp(fetchDevicesPlugin, {
+  name: 'fetchDevices',
+  dependencies: ['zFetch']
+})

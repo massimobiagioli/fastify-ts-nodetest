@@ -1,5 +1,4 @@
-import type { FastifyInstance } from 'fastify'
-import Fastify from 'fastify'
+import Fastify, { FastifyInstance } from 'fastify'
 import autoload from '@fastify/autoload'
 import { join } from 'path'
 import { TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
