@@ -6,20 +6,20 @@ import { TypeBoxTypeProvider } from '@fastify/type-provider-typebox'
 
 const defaultOptions = {
   logger: true,
-  ignoreTrailingSlash: true,
+  ignoreTrailingSlash: true
 }
 
-async function buildApp(options: Partial<typeof defaultOptions> = {}) {
+async function buildApp (options: Partial<typeof defaultOptions> = {}) {
   const app: FastifyInstance = Fastify({ ...defaultOptions, ...options })
     .withTypeProvider<TypeBoxTypeProvider>()
-  
+
   app.register(autoload, {
     dir: join(__dirname, 'plugins')
   })
 
   app.register(autoload, {
     dir: join(__dirname, 'routes'),
-    options: { prefix: '/api' },
+    options: { prefix: '/api' }
   })
 
   return app

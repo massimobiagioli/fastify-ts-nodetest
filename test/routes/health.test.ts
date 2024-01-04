@@ -1,7 +1,7 @@
 import buildApp from '@src/app'
 import { FastifyInstance } from 'fastify'
 import { describe, it, before, after } from 'node:test'
-import assert from 'assert';
+import assert from 'assert'
 
 describe('GET /health HTTP', () => {
   let app: FastifyInstance
@@ -17,10 +17,10 @@ describe('GET /health HTTP', () => {
   it('GET /health returns status 200', async () => {
     const response = await app.inject({
       method: 'GET',
-      url: '/api/health',
+      url: '/api/health'
     })
 
     assert.strictEqual(response.statusCode, 200)
-    assert.strictEqual(JSON.parse(response.payload).status, 'ok') 
+    assert.strictEqual(JSON.parse(response.payload).status, 'ok')
   })
 })

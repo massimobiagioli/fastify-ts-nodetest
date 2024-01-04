@@ -4,7 +4,9 @@
 		"build": "tsc -p tsconfig.json",
 		"test": "node -r ts-node/register --test test/**/*.test.ts",
 		"test:watch": "node -r ts-node/register --test --watch test/**/*.test.ts",
-		"test:coverage": "nyc pnpm run test"
+		"test:coverage": "nyc pnpm run test",
+		"lint": "ts-standard",
+		"lint:fix": "ts-standard --fix"
 	},
 	"dependencies": {
 		"@fastify/autoload": "^5.8.0",
@@ -21,7 +23,11 @@
 		"nodemon": "^3.0.2",
 		"nyc": "^15.1.0",
 		"ts-node": "^10.9.2",
+		"ts-standard": "^12.0.2",
 		"tsconfig-paths": "^4.2.0",
 		"typescript": "^5.3.3"
+	},
+	"ts-standard": {
+		"project": "./tsconfig.json"
 	}
 }
