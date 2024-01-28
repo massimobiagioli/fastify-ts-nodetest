@@ -1,0 +1,8 @@
+{
+    "nodejs-testing.extensions": [
+      {
+        "extensions": ["ts"],
+        "parameters": ["-r", "ts-node/register"]
+      }
+    ]
+}
